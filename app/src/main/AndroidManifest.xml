@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="apps.dabinu.com.secureafrica">
 
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,12 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.MainActivity"></activity>
+
+        <service android:name=".activities.EmergencyService" />
 
         <activity
-            android:name=".activities.MainActivity">
-
-        </activity>
-        <service android:name=".activities.EmergencyService"/>
+            android:name=".activities.OnboardingActivity"
+            android:label="@string/title_activity_onboarding"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
