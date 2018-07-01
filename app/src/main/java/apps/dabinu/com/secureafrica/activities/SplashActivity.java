@@ -9,6 +9,9 @@ import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
 
 import apps.dabinu.com.secureafrica.R;
 
@@ -27,6 +30,52 @@ public class SplashActivity extends AppCompatActivity {
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         mEditor = sharedPreferences.edit();
+
+
+        findViewById(R.id.outer).setOnTouchListener(new View.OnTouchListener() {
+            Handler handler = new Handler();
+
+            int numberOfTaps = 0;
+            long lastTapTimeMs = 0;
+            long touchDownMs = 0;
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event){
+
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        touchDownMs = System.currentTimeMillis();
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        handler.removeCallbacksAndMessages(null);
+
+                        if((System.currentTimeMillis() - touchDownMs) > ViewConfiguration.getTapTimeout()){
+
+                            numberOfTaps = 0;
+                            lastTapTimeMs = 0;
+                            break;
+                        }
+
+                        if(numberOfTaps > 0 && (System.currentTimeMillis() - lastTapTimeMs) < ViewConfiguration.getDoubleTapTimeout()) {
+                            numberOfTaps += 1;
+
+                        }
+
+                        else{
+                            numberOfTaps = 1;
+                        }
+
+                        lastTapTimeMs = System.currentTimeMillis();
+
+                        if (numberOfTaps == 4) {
+                            //THIS IS WHERE OUR ACTION WOULD BE!!!!!!!!!!!!!!
+                            //revert numberOfTaps to 0
+                        }
+                }
+
+                return true;
+            }
+        });
 
 
         new Handler().postDelayed(new Runnable() {
