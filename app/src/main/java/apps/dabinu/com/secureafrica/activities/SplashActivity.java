@@ -1,7 +1,9 @@
-package apps.dabinu.com.secureafrica;
+package apps.dabinu.com.secureafrica.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import apps.dabinu.com.secureafrica.R;
+
 
 public class SplashActivity extends AppCompatActivity {
 
