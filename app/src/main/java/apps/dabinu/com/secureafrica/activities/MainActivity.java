@@ -96,6 +96,7 @@ public class MainActivity extends BaseActivity {
             }
         });
 
+
         mHomeWatcher.startWatch();
 
         AHBottomNavigation bottomNavigation = findViewById(R.id.navigation);

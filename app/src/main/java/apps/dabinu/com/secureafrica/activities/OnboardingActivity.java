@@ -143,10 +143,12 @@ public class OnboardingActivity extends AppCompatActivity {
         }
 
 
+
         @Override
         public Fragment getItem(int position) {
             return allFragments.get(position);
         }
+
 
 
         @Override

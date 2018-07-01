@@ -15,6 +15,7 @@ import android.widget.Toast;
 import apps.dabinu.com.secureafrica.R;
 
 
+
 public class SplashActivity extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
