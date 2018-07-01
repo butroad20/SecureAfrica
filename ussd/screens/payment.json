@@ -1,0 +1,11 @@
+{
+    "payment_vendor": {
+        "text": "Enter a vender ID"
+    },
+    "payment_amount": {
+        "text": "Enter Amount"
+    },
+    "payment_pin": {
+        "text": "Enter your pin to confirm payment"
+    }
+}

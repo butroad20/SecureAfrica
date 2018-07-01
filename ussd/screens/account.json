@@ -1,0 +1,33 @@
+{
+    "account_menu": {
+        "text": "1. Show my UserID\n2. Change Pin\n3. Add New Card\n4. Delete Card"
+    },
+    "account_old_pin": {
+        "text": "Enter your old pin"
+    },
+    "account_new_pin": {
+        "text": "Enter your new pin"
+    },
+    "confirm_new_pin": {
+        "text": "Confirm your new pin"
+    },
+    "add_card_number": {
+        "text": "Enter your card number"
+    },
+    "card_expiry_month": {
+        "text": "Enter card expiration month (1-12)"
+    },
+    "card_expiry_year": {
+        "text": "Enter card expiration year (20**)"
+    },
+    "card_pin": {
+        "text": "Enter your card pin"
+    },
+    "fetch_id": {
+        "text": "Your user id is {{ user_id }}",
+        "quit": "True"
+    },
+    "select_card": {
+        "text": "Select your card {{ card_list }"
+    }
+}
