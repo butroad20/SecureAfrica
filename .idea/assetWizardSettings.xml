@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/home/taslim/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/maps/ic_directions_bus_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/home/taslim/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/communication/ic_call_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -33,7 +33,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="tour" />
+                                      <entry key="outputName" value="call" />
                                       <entry key="theme" value="CUSTOM" />
                                       <entry key="themeColor" value="00490e" />
                                     </map>
