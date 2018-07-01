@@ -24,60 +24,69 @@ import apps.dabinu.com.secureafrica.R;
 
 public class MainActivity extends BaseActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.container).setOnTouchListener(new View.OnTouchListener() {
-            Handler handler = new Handler();
+//        findViewById(R.id.container).setOnTouchListener(new View.OnTouchListener() {
+//            Handler handler = new Handler();
+//
+//            int numberOfTaps = 0;
+//            long lastTapTimeMs = 0;
+//            long touchDownMs = 0;
+//
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event){
+//
+//                switch (event.getAction()){
+//                    case MotionEvent.ACTION_DOWN:
+//                        touchDownMs = System.currentTimeMillis();
+//                        break;
+//                    case MotionEvent.ACTION_UP:
+//                        handler.removeCallbacksAndMessages(null);
+//
+//                        if((System.currentTimeMillis() - touchDownMs) > ViewConfiguration.getTapTimeout()){
+//
+//                            numberOfTaps = 0;
+//                            lastTapTimeMs = 0;
+//                            break;
+//                        }
+//
+//                        if(numberOfTaps > 0 && (System.currentTimeMillis() - lastTapTimeMs) < ViewConfiguration.getDoubleTapTimeout()) {
+//                            numberOfTaps += 1;
+//
+//                        }
+//
+//                        else{
+//                            numberOfTaps = 1;
+//                        }
+//
+//                        lastTapTimeMs = System.currentTimeMillis();
+//
+//                        if (numberOfTaps == 4) {
+//                            //THIS IS WHERE OUR ACTION WOULD BE!!!!!!!!!!!!!!
+//                            //revert numberOfTaps to 0
+//                            Toast.makeText(getApplicationContext(), "Ayokunle is my bitch", Toast.LENGTH_LONG).show();
+//                        }
+//                }
+//
+//                return true;
+//            }
+//        });
+//
 
-            int numberOfTaps = 0;
-            long lastTapTimeMs = 0;
-            long touchDownMs = 0;
-
-            @Override
-            public boolean onTouch(View v, MotionEvent event){
-
-                switch (event.getAction()){
-                    case MotionEvent.ACTION_DOWN:
-                        touchDownMs = System.currentTimeMillis();
-                        break;
-                    case MotionEvent.ACTION_UP:
-                        handler.removeCallbacksAndMessages(null);
-
-                        if((System.currentTimeMillis() - touchDownMs) > ViewConfiguration.getTapTimeout()){
-
-                            numberOfTaps = 0;
-                            lastTapTimeMs = 0;
-                            break;
-                        }
-
-                        if(numberOfTaps > 0 && (System.currentTimeMillis() - lastTapTimeMs) < ViewConfiguration.getDoubleTapTimeout()) {
-                            numberOfTaps += 1;
-
-                        }
-
-                        else{
-                            numberOfTaps = 1;
-                        }
-
-                        lastTapTimeMs = System.currentTimeMillis();
-
-                        if (numberOfTaps == 4) {
-                            //THIS IS WHERE OUR ACTION WOULD BE!!!!!!!!!!!!!!
-                            //revert numberOfTaps to 0
-                            Toast.makeText(getApplicationContext(), "Ayokunle is my bitch", Toast.LENGTH_LONG).show();
-                        }
-                }
-
-                return true;
-            }
-        });
-
-
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 383);
+        }
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.SYSTEM_ALERT_WINDOW) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SYSTEM_ALERT_WINDOW}, 1);
         }
