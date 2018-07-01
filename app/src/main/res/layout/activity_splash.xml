@@ -4,15 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/outer"
+    android:background="#000"
     tools:context=".activities.SplashActivity">
 
-    <TextView
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:alpha="0.5"
+        android:src="@drawable/africa"/>
+
+    <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="257dp"
-        android:layout_marginEnd="142dp"
-        android:text="Hello World!" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="131dp" />
 
 </RelativeLayout>

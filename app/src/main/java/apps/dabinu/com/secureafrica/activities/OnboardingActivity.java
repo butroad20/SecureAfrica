@@ -1,6 +1,7 @@
 package apps.dabinu.com.secureafrica.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -156,7 +157,13 @@ public class OnboardingActivity extends AppCompatActivity {
 
 
     @Override
-    public void onBackPressed() {
-        //do nothing
+    public void onBackPressed(){
+        if(getIntent().getStringExtra("FROM").equals("tourfragment")){
+            Intent launchNextActivity = new Intent(getApplicationContext(), MainActivity.class);
+            launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(launchNextActivity);
+        }
     }
 }
