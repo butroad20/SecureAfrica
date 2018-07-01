@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
+import android.widget.Toast;
 
 import apps.dabinu.com.secureafrica.R;
 
@@ -70,6 +71,7 @@ public class SplashActivity extends AppCompatActivity {
                         if (numberOfTaps == 4) {
                             //THIS IS WHERE OUR ACTION WOULD BE!!!!!!!!!!!!!!
                             //revert numberOfTaps to 0
+                            Toast.makeText(getApplicationContext(), "Ayokunle is my bitch", Toast.LENGTH_LONG).show();
                         }
                 }
 

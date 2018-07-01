@@ -14,6 +14,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 import apps.dabinu.com.secureafrica.OnboardingFragments.OnboardingAA;
@@ -74,6 +76,7 @@ public class OnboardingActivity extends AppCompatActivity {
                         if (numberOfTaps == 4) {
                             //THIS IS WHERE OUR ACTION WOULD BE!!!!!!!!!!!!!!
                             //revert numberOfTaps to 0
+                            Toast.makeText(getApplicationContext(), "Ayokunle is my bitch", Toast.LENGTH_LONG).show();
                         }
                 }
 

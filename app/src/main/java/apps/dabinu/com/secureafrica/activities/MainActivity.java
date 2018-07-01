@@ -69,6 +69,7 @@ public class MainActivity extends BaseActivity {
                         if (numberOfTaps == 4) {
                             //THIS IS WHERE OUR ACTION WOULD BE!!!!!!!!!!!!!!
                             //revert numberOfTaps to 0
+                            Toast.makeText(getApplicationContext(), "Ayokunle is my bitch", Toast.LENGTH_LONG).show();
                         }
                 }
 
