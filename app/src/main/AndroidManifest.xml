@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="apps.dabinu.com.secureafrica">
 
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,6 +24,7 @@
             android:name=".activities.MainActivity">
 
         </activity>
+        <service android:name=".activities.EmergencyService"/>
     </application>
 
 </manifest>
