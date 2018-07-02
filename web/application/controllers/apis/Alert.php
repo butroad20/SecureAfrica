@@ -22,9 +22,9 @@
             $this->load->helper(array('json_output_helper'));
             $this->load->library('form_validation');
         }
-        public function index(){
-           var_dump( $this->alert_model->get_by_id(2));
-        }
+        // public function index(){
+        //    var_dump( $this->alert_model->get_by_id(2));
+        // }
         public function get_numbers(){
             $method = $_SERVER['REQUEST_METHOD'];
             if ($method != 'GET'){
@@ -64,13 +64,13 @@
             }
         }
 
-        public function ussd_update($id = false){
+        public function ussd_update($phone = false){
             $method = $_SERVER['REQUEST_METHOD'];
             if ($method != 'POST'){
                 return json_output(405, array('message'=>'Bad Request'));
             }else{
-                if($id == false){
-                    return json_output(403, array('error'=>'Incomplete URL', 'message'=>'Missing ID field'));
+                if($phone == false){
+                    return json_output(403, array('error'=>'Incomplete URL', 'message'=>'Missing Phone Number field'));
                 }
                 // $form_data = json_decode(file_get_contents('php://input'), true);
                 $this->form_validation->set_error_delimiters('', '');
@@ -79,9 +79,9 @@
                 if(!$this->form_validation->run()){
                     return json_output(403, array('error'=>'Incomplete Fields', 'message'=>validation_errors()));
                 }else{
-                    $alert = $this->alert_model->get_by_id($id);
+                    $alert = $this->alert_model->get_by_phone($phone);                    
                     if($alert){
-
+                        $id = $alert->id;
                         $data = array(
                             'state' => @$this->input->post('state'),
                             'lga'=> @$this->input->post('lga'),
@@ -97,7 +97,7 @@
                         $logs[] = array('activity'=>'user update', 'timestamp'=> time(), 'data'=>array_filter($data,function($value) { return $value !== ''; }));
                         $data['logs'] = json_encode($logs);
                         if($this->alert_model->update_alert($id, $data)){
-                            return json_output(200, array('message'=>'success', 'id'=> $id));
+                            return json_output(200, array('message'=>'success', 'data'=> $this->alert_model->get_by_id($id)));
                         }else{
                             return json_output(503, array('message'=>'An error occured'));
                         }
