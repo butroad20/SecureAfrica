@@ -89,6 +89,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:visibility="gone"
                     android:layout_alignParentStart="true"
                     android:id="@+id/firstCallee">
 
@@ -96,6 +97,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:src="@drawable/call"
+                        android:id="@+id/callFCallee"
                         app:civ_border_width="7dp"
                         app:civ_border_color="#ffffff"
                         app:civ_circle_background_color="#ffffff"/>
@@ -106,7 +108,7 @@
                         android:textColor="#000000"
                         android:gravity="center"
                         android:textSize="18sp"
-                        android:text="Adamawa security"/>
+                        android:id="@+id/nameOffCallee"/>
 
                 </LinearLayout>
 
@@ -114,6 +116,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:visibility="gone"
                     android:layout_centerHorizontal="true"
                     android:id="@+id/secondCallee">
 
@@ -121,6 +124,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:src="@drawable/call"
+                        android:id="@+id/callSCallee"
                         app:civ_border_width="7dp"
                         app:civ_border_color="#ffffff"
                         app:civ_circle_background_color="#ffffff"/>
@@ -131,7 +135,7 @@
                         android:textColor="#000000"
                         android:gravity="center"
                         android:textSize="18sp"
-                        android:text="Nigerian security"/>
+                        android:id="@+id/nameOfsCallee"/>
 
                 </LinearLayout>
 
@@ -139,6 +143,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:visibility="gone"
                     android:layout_alignParentEnd="true"
                     android:id="@+id/thirdCallee">
 
@@ -146,6 +151,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:src="@drawable/call"
+                        android:id="@+id/callTCallee"
                         app:civ_border_width="7dp"
                         app:civ_border_color="#ffffff"
                         app:civ_circle_background_color="#ffffff"/>
@@ -156,7 +162,7 @@
                         android:textColor="#000000"
                         android:gravity="center"
                         android:textSize="18sp"
-                        android:text="Tolu Fakiyesi"/>
+                        android:id="@+id/nameOftCallee"/>
 
                 </LinearLayout>
 

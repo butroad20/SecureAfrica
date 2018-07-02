@@ -6,6 +6,9 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
+
 import apps.dabinu.com.secureafrica.R;
 
 
@@ -29,6 +32,13 @@ public class DatabaseFragment extends android.app.Fragment {
 
         getView().findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
 
+        ArrayList<String> name = new ArrayList<>();
+        ArrayList<String> number = new ArrayList<>();
+
+
 
     }
+
+
+
 }
