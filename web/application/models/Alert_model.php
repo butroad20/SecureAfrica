@@ -41,11 +41,20 @@ class Alert_model extends CI_Model{
         $this->db->where('id', $id);
         return $this->db->get()->row();
     }
+    public function get_by_phone($phone){
+        $this->db->from('alerts');
+        $this->db->order_by('timestamp', 'DESC');
+        $this->db->where('phone', $phone);
+        return $this->db->get()->row();
+    }
     
     public function update_alert($id, $data){
         // $this->db->set($data);
         $this->db->where('id', $id);
         return $this->db->update('alerts', $data);
     }
-    
+    public function get_all(){
+        $this->db->from('alerts');
+        return $this->db->get()->result();
+    }
 }
