@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bck"
     android:background="#c2cac2"
     tools:context=".AppFragments.EmergencyFragment">
 
@@ -78,19 +79,19 @@
                 android:id="@+id/callText"
                 android:textColor="#177314" />
 
-            <RelativeLayout
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:layout_below="@id/callText"
-                android:layout_centerHorizontal="true"
+                android:layout_alignParentStart="true"
                 android:layout_marginTop="20dp">
 
                 <LinearLayout
-                    android:layout_width="100dp"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:visibility="gone"
-                    android:layout_alignParentStart="true"
                     android:id="@+id/firstCallee">
 
                     <de.hdodenhof.circleimageview.CircleImageView
@@ -113,11 +114,10 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="100dp"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:visibility="gone"
-                    android:layout_centerHorizontal="true"
                     android:id="@+id/secondCallee">
 
                     <de.hdodenhof.circleimageview.CircleImageView
@@ -140,11 +140,10 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="100dp"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:visibility="gone"
-                    android:layout_alignParentEnd="true"
                     android:id="@+id/thirdCallee">
 
                     <de.hdodenhof.circleimageview.CircleImageView
@@ -167,8 +166,28 @@
                 </LinearLayout>
 
 
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/addNewEmergency">
 
-            </RelativeLayout>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/add"
+                        app:civ_border_width="7dp"
+                        app:civ_border_color="#ffffff"
+                        app:civ_circle_background_color="#ffffff"/>
+
+
+                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
         </RelativeLayout>
 
     </LinearLayout>

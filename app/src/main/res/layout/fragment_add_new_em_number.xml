@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/name"
+        android:singleLine="true"
+        android:hint="Name" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/number"
+        android:singleLine="true"
+        android:layout_below="@+id/name"
+        android:hint="Phone number" />
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_below="@+id/number"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:id="@+id/add"
+            android:text="Add"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/add"
+            android:id="@+id/cancel"
+            android:layout_marginStart="18dp"
+            android:text="Cancel"
+            android:textAllCaps="false"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

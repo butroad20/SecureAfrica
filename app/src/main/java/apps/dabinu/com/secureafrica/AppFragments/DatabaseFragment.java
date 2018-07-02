@@ -52,7 +52,7 @@ public class DatabaseFragment extends android.app.Fragment {
         ArrayList<String> number = new ArrayList<>();
 
 
-        String fDetail = sharedPreferences.getString("fNumber", "EMERGENCY112");
+        String fDetail = sharedPreferences.getString("fNumber", "General 112");
         String sDetail = sharedPreferences.getString("sNumber", "nuller");
         String tDetail = sharedPreferences.getString("tNumber", "nuller");
 
