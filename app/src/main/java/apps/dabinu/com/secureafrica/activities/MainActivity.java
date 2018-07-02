@@ -119,16 +119,17 @@ public class MainActivity extends BaseActivity {
         bottomNavigation.setCurrentItem(0);
 
 
-        final FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        final FragmentTransaction fragmentTrnsaction = getFragmentManager().beginTransaction();
 
-        fragmentTransaction.replace(R.id.container, new EmergencyFragment());
-        fragmentTransaction.commit();
+        fragmentTrnsaction.replace(R.id.container, new EmergencyFragment());
+        fragmentTrnsaction.commit();
 
 
         bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
             @Override
             public boolean onTabSelected(int position, boolean wasSelected){
 
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                 switch(position){
 
                     case 0:

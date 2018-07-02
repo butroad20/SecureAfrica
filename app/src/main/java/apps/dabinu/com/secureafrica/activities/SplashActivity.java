@@ -83,7 +83,6 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run(){
                 String someString = sharedPreferences.getString("FIRST", "no");
-                Log.d("SOME", someString);
 
                 if(someString.equals("no")){
                     mEditor.putString("FIRST", "yes");

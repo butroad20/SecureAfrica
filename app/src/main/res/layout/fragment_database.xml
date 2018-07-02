@@ -40,12 +40,22 @@
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
+        android:id="@+id/recyclerView"
         android:layout_below="@+id/searchCard"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="60dp">
 
 
     </android.support.v7.widget.RecyclerView>
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:id="@+id/progressBar"/>
 
 
 </RelativeLayout>
