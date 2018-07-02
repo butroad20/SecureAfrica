@@ -8,15 +8,24 @@ and the lack of emergency response.
 
 The following problems were identified:
 
-### 1. The citizens (or victims) most of the time cannot remember what emergency lines to dail  
+- 1. The citizens (or victims) most of the time cannot remember what emergency lines to dail  
 
-Why? The numbers are too long or the victim was in a different state and the emergency number changed.
+Why? The numbers are too long or the victim was in a different state and the emergency number changed. Even when they do, the number might be sometimes unavailable and there is no way to log the incidence.
 
-#### Our Solution
+- 2. The emergency lines are not toll free.
+
+- 3. Internet connectivy is not guaranteed.
+
+- 4. In times of danger, victims tend to be too scared to remember what to do.
+
+
+### How we tackled the problems
 
 - We implemented an easy to remember USSD code to dail in case of emergency
 
-- Even when they do, the number might be sometimes unavailable and there is no way to log the incidence.
+- Our andriod app gives the user access emergency phone numbers offline.
+
+- During an emergency we abstract all the processes away from the user, all the user has to do is `tap 4 times` or `dail our short ussd code`. We do all the hard work.
 
 ## Our Solution
 
@@ -67,11 +76,11 @@ This applies to users with smartphone
 The ussd app allows users without access to the interet to create and alert.
 The design principle is that we get the user's nature of emergency and location as fast and possible. We log these details on the dashboard so that help can be sent immediately while the we then continue to engage the user so as to get more information from the user.
 
-#### Flow
+#### USSD Flow
 
 The USSD app is designed to cater for two nature of emergencies
 
-Case 1 (Extreme Emegency): The user is in grief danger and can only manage to dail a ussd code.
+**Case 1 (Extreme Emegency):** The user is in grief danger and can only manage to dail a ussd code.
 
 For the security agency to take up an emergency case, they need to know the nature of emergency and the location.
 
@@ -79,13 +88,13 @@ Our approach on getting the victim's nature of emergency:
 
     - A unique code is associated for each nature of emergency
 
-    - eg. dailing `*0110*1#` automatically informs us that the user is in a robbery situation
+    - eg. dailing `384*0110*1#` automatically informs us that the user is in a robbery situation
 
 Our approach on getting the victims location:
 
     - We send victim's phone number to the security agency. The security agency can now triangulate the victim's location using the phone number
 
-Case 2: The user is reporting an incidence
+**Case 2:** The user is reporting an incidence
 
 In these case, the user has enough time to give us enough information. Everything in the emergency case still applies. But now we prompt the user for more information and offer to call the user from our end to get even more information
 
@@ -93,13 +102,13 @@ In these case, the user has enough time to give us enough information. Everythin
 #### Trying out the USSD APP
 
 The ussd application can be accessed at [here](https://simulator.africastalking.com:1517)
+
 Our ussd code is  `*384*0110#`
 
 
 ### The Dashboard
 
-The dashboard allows security agencies to see alerts that have been created. 
-
+The dashboard allows security agencies to see alerts that have been created by using either from the USSD app or from the mobile app.
 
 #### Testing out the dashboard
 
@@ -108,4 +117,6 @@ The dashboard allows security agencies to see alerts that have been created.
 
 #### Feature of the dashboard
 
-- 
+- The dashboard is protected against unauthorized access
+- The status of a case can be updated to *processing* when someone has been assigned to the case and later on to *resolved* after the emergency has been duly attendend to.
+- Cases can be sorted based on location, type or status
