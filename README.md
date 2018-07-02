@@ -52,9 +52,17 @@ Our platform is made up of (3) applications nicely integrated together to delive
 
 This applies to users with smartphone
 
+![App Landing Page](/screenshots/app_home.png)
+
 #### App Flow
 
   - 1. After the user installs the app, we take the user through a tour on using the app. 
+
+  ![Onboarding Screen](/screenshots/onboarding.png)
+  ![Onboarding Screen](/screenshots/onboarding1.png)
+  ![Onboarding Screen](/screenshots/onboarding2.png)
+  ![Onboarding Screen](/screenshots/onboarding3.png)
+  ![Onboarding Screen](/screenshots/onboarding4.png)
 
   - 2. When in danger, all the user needs to do is `tap the screen four times` and the security agency gets alerted!
 
@@ -65,11 +73,19 @@ This applies to users with smartphone
 
 #### Features
 
-- User gets access to a list of emeegency numbers based on their location.
+- User gets access to a list of emergency numbers based on their location.
+
+![List of Emergency numbers](/screenshots/emergency_numbers.png)
 
 - User can add personal emergency numbers to be contacted.
 
 - When sucipious of danger, user can queue an emergency. A floating action button is created. When the danger is confirmed or the threat becomes real, all the user has to do is tap the floating button `4 taps` and the queued emegency gets sent
+
+![Floating Action Button Screen](/screenshots/fab.png)
+
+#### testing the android app
+
+Click [here](https://drive.google.com/open?id=1NN3VFzapDm-CxTsC8aj5EXFhUTjBYh31) to download the android app
 
 ### B. The USSD APP
 
