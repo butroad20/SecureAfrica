@@ -1,6 +1,8 @@
 package apps.dabinu.com.secureafrica.activities;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.support.v4.app.Fragment;
@@ -9,8 +11,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 import apps.dabinu.com.secureafrica.OnboardingFragments.OnboardingAA;
@@ -33,6 +39,51 @@ public class OnboardingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_onboarding);
 
+        findViewById(R.id.main_content).setOnTouchListener(new View.OnTouchListener() {
+            Handler handler = new Handler();
+
+            int numberOfTaps = 0;
+            long lastTapTimeMs = 0;
+            long touchDownMs = 0;
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event){
+
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        touchDownMs = System.currentTimeMillis();
+                        break;
+                    case MotionEvent.ACTION_UP:
+                        handler.removeCallbacksAndMessages(null);
+
+                        if((System.currentTimeMillis() - touchDownMs) > ViewConfiguration.getTapTimeout()){
+
+                            numberOfTaps = 0;
+                            lastTapTimeMs = 0;
+                            break;
+                        }
+
+                        if(numberOfTaps > 0 && (System.currentTimeMillis() - lastTapTimeMs) < ViewConfiguration.getDoubleTapTimeout()) {
+                            numberOfTaps += 1;
+
+                        }
+
+                        else{
+                            numberOfTaps = 1;
+                        }
+
+                        lastTapTimeMs = System.currentTimeMillis();
+
+                        if (numberOfTaps == 4) {
+                            //THIS IS WHERE OUR ACTION WOULD BE!!!!!!!!!!!!!!
+                            //revert numberOfTaps to 0
+                            Toast.makeText(getApplicationContext(), "Ayokunle is my bitch", Toast.LENGTH_LONG).show();
+                        }
+                }
+
+                return true;
+            }
+        });
 
         ArrayList<Fragment> list = new ArrayList<>();
         list.add(new OnboardingAA());
@@ -92,10 +143,12 @@ public class OnboardingActivity extends AppCompatActivity {
         }
 
 
+
         @Override
         public Fragment getItem(int position) {
             return allFragments.get(position);
         }
+
 
 
         @Override
@@ -106,7 +159,13 @@ public class OnboardingActivity extends AppCompatActivity {
 
 
     @Override
-    public void onBackPressed() {
-        //do nothing
+    public void onBackPressed(){
+        if(getIntent().getStringExtra("FROM").equals("tourfragment")){
+            Intent launchNextActivity = new Intent(getApplicationContext(), MainActivity.class);
+            launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(launchNextActivity);
+        }
     }
 }

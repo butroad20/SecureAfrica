@@ -35,14 +35,18 @@ public class OnboardingE extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         if(ActivityCompat.checkSelfPermission(getActivity().getApplicationContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 101);
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 101);
         }
 
 
         getView().findViewById(R.id.set).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity().getApplicationContext(), MainActivity.class));
+                Intent launchNextActivity = new Intent(getActivity().getApplicationContext(), MainActivity.class);
+                launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                launchNextActivity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(launchNextActivity);
             }
         });
     }

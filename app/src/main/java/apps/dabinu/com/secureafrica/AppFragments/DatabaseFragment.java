@@ -11,16 +11,15 @@ import apps.dabinu.com.secureafrica.R;
 public class DatabaseFragment extends android.app.Fragment {
 
 
-    public DatabaseFragment() {
-        // Required empty public constructor
+    public DatabaseFragment(){
+
     }
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         return inflater.inflate(R.layout.fragment_database, container, false);
     }
+
 
 }
