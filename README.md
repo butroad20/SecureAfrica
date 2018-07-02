@@ -8,15 +8,15 @@ and the lack of emergency response.
 
 The following problems were identified:
 
-- 1. The citizens (or victims) most of the time cannot remember what emergency lines to dail  
+1. The citizens (or victims) most of the time cannot remember what emergency lines to dail  
 
 Why? The numbers are too long or the victim was in a different state and the emergency number changed. Even when they do, the number might be sometimes unavailable and there is no way to log the incidence.
 
-- 2. The emergency lines are not toll free.
+2. The emergency lines are not toll free.
 
-- 3. Internet connectivy is not guaranteed.
+3. Internet connectivy is not guaranteed.
 
-- 4. In times of danger, victims tend to be too scared to remember what to do.
+4. In times of danger, victims tend to be too scared to remember what to do.
 
 
 ### How we tackled the problems
@@ -101,14 +101,29 @@ In these case, the user has enough time to give us enough information. Everythin
 
 #### Trying out the USSD APP
 
-The ussd application can be accessed at [here](https://simulator.africastalking.com:1517)
+- Vistion Online [Simulator](https://simulator.africastalking.com:1517)
 
-Our ussd code is  `*384*0110#`
+- Enter a valid phone number
+
+![Simulator Landing Page](/screenshots/simulator-landing.png)
+
+- Select the USSD Option
+
+![Simulator Options Page](/screenshots/simulator-options.png)
+
+- Enter ussd code to dail (Our ussd code is  `*384*0110#`)
+
+![Simulator USSD Page](/screenshots/simulator-ussd.png)
+
+
+![Simulator USSD Page](/screenshots/alert-option-list.png)
 
 
 ### The Dashboard
 
 The dashboard allows security agencies to see alerts that have been created by using either from the USSD app or from the mobile app.
+
+![Dashboard](/screenshots/dashboard.png)
 
 #### Testing out the dashboard
 
@@ -120,3 +135,5 @@ The dashboard allows security agencies to see alerts that have been created by u
 - The dashboard is protected against unauthorized access
 - The status of a case can be updated to *processing* when someone has been assigned to the case and later on to *resolved* after the emergency has been duly attendend to.
 - Cases can be sorted based on location, type or status
+
+![Sorting and searching example](/screenshots/sort.png)
